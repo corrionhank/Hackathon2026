@@ -5,7 +5,7 @@ export default function Titlebar() {
     <div className="titlebar">
       <div className="titlebar-left">
         <img src={logo} alt="ClipFindr" className="titlebar-logo" />
-        <span className="titlebar-title">ClipFindr - An AI Video Clip Search Tool</span>
+        <span className="titlebar-title">ClipFindr</span>
       </div>
       <div className="titlebar-controls">
         <button className="titlebar-btn" onClick={() => window.electronAPI?.minimize()}>&#8212;</button>
