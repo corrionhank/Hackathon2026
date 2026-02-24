@@ -18,10 +18,12 @@ function startPythonServer() {
     const ROOT = path.join(__dirname, ".."); // Hackathon2026/
     const backendDir = path.join(ROOT, "backend");
 
-    // support backend/venv or backend/.venv
-    const venvDir = fs.existsSync(path.join(backendDir, "venv"))
-        ? path.join(backendDir, "venv")
-        : path.join(backendDir, ".venv");
+    // support hackathonvenv (root), backend/venv, or backend/.venv
+    const venvDir = fs.existsSync(path.join(ROOT, "hackathonvenv"))
+        ? path.join(ROOT, "hackathonvenv")
+        : fs.existsSync(path.join(backendDir, "venv"))
+          ? path.join(backendDir, "venv")
+          : path.join(backendDir, ".venv");
 
     // cross-platform python path
     const pythonPath =
